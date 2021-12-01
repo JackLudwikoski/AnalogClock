@@ -1,0 +1,196 @@
+:root {
+    --h-angle: 270deg;
+    --m-angle: 270deg;
+    --h-x-trans: -1;
+    --h-y-trans: 1;
+    --m-x-trans: -1;
+    --m-y-trans: 1;
+
+    --h-factor: 0.215;
+    --m-factor: 0.4;
+
+    --cr: 20vw;
+
+    --bg-color: #c1d4a0;
+    --bg-font-color: #000000;
+}
+
+* {
+    margin: 0;
+    font-family: 'Montserrat';
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-color);
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Menu */
+.menu {
+    position: absolute;
+    top: 1vw;
+    left: 1vw;
+    width: calc(1.1 * var(--cr));
+}
+
+.backgroundColorSection {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+label {
+    display: block;
+    color: var(--bg-font-color);
+    font-size: calc(0.3 * var(--cr));
+}
+
+button {
+    border: none;
+    height: 60px;
+    background-color: var(--bg-font-color);
+    color: var(--bg-color);
+    width: 100%;
+    font-size: calc(0.06 * var(--cr));
+}
+
+#BGColorButton {
+    margin-left: 1vw;
+}
+
+#inputBGColor {
+    height: 60px;
+}
+
+
+/* Weather Data */
+.weatherData {
+    position: absolute;
+    bottom: 1vw;
+    left: 1vw;
+}
+
+.weatherData p, .weatherData h1 {
+    color: var(--bg-font-color);
+}
+
+.weatherData h1 {
+    font-size: calc(0.3 * var(--cr));
+}
+.weatherData p {
+    font-size: calc(0.3 / 2.632 * var(--cr));
+}
+
+
+/* Clock Strap */
+.strap {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    width: calc(0.6 * var(--cr));
+    background-color: #664e2c;
+    z-index: 3;
+}
+
+
+/* Clock Circle */
+.circle {
+    top: calc(50% - var(--cr) / 2);
+    position: absolute;
+    z-index: 5;
+    background-color: #e1d6c6;
+    width: var(--cr);
+    height: var(--cr);
+    border-radius: 50%;
+}
+
+
+/* Hour and Minute hand */
+.hand {
+    position: absolute;
+    border: calc(0.0075 * var(--cr)) solid #000000;
+    border-radius: calc(0.0075 * var(--cr));
+    background-color: #000000;
+    /* subtracts off the border */
+    top: calc(50% - (0.0075 * var(--cr)));
+    /* subtracts off the border */
+    left: calc(50% - (0.0075 * var(--cr)));
+}
+.hour {
+    z-index: 10;
+    width: calc(var(--h-factor) * var(--cr));
+    transform: rotate(var(--h-angle)) translate(calc(var(--h-x-trans) * -1 * calc(var(--h-factor) * var(--cr)) / 2), calc(var(--h-y-trans) * -1 * calc(var(--h-factor) * var(--cr)) / 2));
+}
+.minute {
+    z-index: 9;
+    width: calc(var(--m-factor) * var(--cr));
+    transform: rotate(var(--m-angle)) translate(calc(var(--m-x-trans) * -1 * calc(var(--m-factor) * var(--cr)) / 2), calc(var(--m-y-trans) * -1 * calc(var(--m-factor) * var(--cr)) / 2));
+}
+
+
+/* Tick Marks */
+.tick {
+    position: absolute;
+    /* subtracts off the border as well as half of the height of the tick */
+    top: calc(50% - (0.005 * var(--cr)) - (0.0375 * var(--cr)));
+    /* subtracts off the border */
+    left: calc(50% - (0.005 * var(--cr)));;
+    z-index: 7;
+    width: 0;
+    height: calc(0.075 * var(--cr));
+    border: calc(0.005 * var(--cr)) solid #000000;
+    background-color: #000000;
+    border-radius: calc(0.005 * var(--cr));
+}
+.one {
+    transform: rotate(30deg) translate(0, calc(-0.47 * var(--cr)));
+}
+.two {
+    transform: rotate(60deg) translate(0, calc(-0.47 * var(--cr)));
+}
+.three {
+    transform: rotate(90deg) translate(0, calc(-0.47 * var(--cr)));
+}
+.four {
+    transform: rotate(120deg) translate(0, calc(-0.47 * var(--cr)));
+}
+.five {
+    transform: rotate(150deg) translate(0, calc(-0.47 * var(--cr)));
+}
+.six {
+    transform: rotate(180deg) translate(0, calc(-0.47 * var(--cr)));
+}
+.seven {
+    transform: rotate(210deg) translate(0, calc(-0.47 * var(--cr)));
+}
+.eight {
+    transform: rotate(240deg) translate(0, calc(-0.47 * var(--cr)));
+}
+.nine {
+    transform: rotate(270deg) translate(0, calc(-0.47 * var(--cr)));
+}
+.ten {
+    transform: rotate(300deg) translate(0, calc(-0.47 * var(--cr)));
+}
+.eleven {
+    transform: rotate(330deg) translate(0, calc(-0.47 * var(--cr)));
+}
+.twelve {
+    transform: rotate(0deg) translate(0, calc(-0.47 * var(--cr)));
+}
+
+
+/* Clock Metal Circle */
+.metalCircle {
+    position: absolute;
+    width: calc(0.95 * var(--cr));
+    height: calc(0.95 * var(--cr));
+    border: calc(0.05 * var(--cr)) solid #a5a5a5;
+    top: calc(50% - (0.95 * var(--cr)) / 2 - (0.05 * var(--cr)));
+    border-radius: 50%;
+    z-index: 8;
+}

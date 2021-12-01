@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Analog Clock</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+        <link href="../css/style.css" rel="stylesheet">
+        <link rel="icon" href="../images/clockFavicon.png">
+        <script src="../js/script.js"></script>
+        <script src="../js/settings.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    </head>
+    <body>
+            <div class="menu">
+                <label for="inputBGColor" name="inputBGColor">Settings</label>
+                <br>
+                <div class="backgroundColorSection">
+                    <input type="color" id="inputBGColor" value="#c1d4a0">
+                    <button type="button" onClick="changeBGColor();" id="BGColorButton">
+                        Update Background Color</button>
+                </div>
+                <br>
+                <button type="button" onClick="getWeather();">Update Weather</button>
+            </div>
+            <div class="weatherData">
+                <h1 id="cityName"></h1>
+                <p id="temperature"></p>
+                <p id="sunrise"></p>
+                <p id="sunset"></p>
+            </div>
+            <div class="strap"></div>
+            <div class="metalCircle"></div>
+            <div class="circle"></div>
+            <div class="hour hand" id="hourHand"></div>
+            <div class="minute hand" id="minuteHand"></div>
+            <div class="tick one"></div>
+            <div class="tick two"></div>
+            <div class="tick three"></div>
+            <div class="tick four"></div>
+            <div class="tick five"></div>
+            <div class="tick six"></div>
+            <div class="tick seven"></div>
+            <div class="tick eight"></div>
+            <div class="tick nine"></div>
+            <div class="tick ten"></div>
+            <div class="tick eleven"></div>
+            <div class="tick twelve"></div>
+    </body>
+</html>
